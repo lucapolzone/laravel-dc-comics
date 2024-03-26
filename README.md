@@ -1,32 +1,22 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Esercizio: Laravel DC Comics (25/03/2024)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+nome repo: `laravel-dc-comics`
 
-## Init project
+Ciao ragazzi, <br>
+oggi create un nuovo progetto Laravel 9 per gestire un archivio di fumetti.
 
-Per il frontend:
+## Milestone 1
 
-```
-npm install
-npm run dev
-```
+Tramite gli appositi comandi artisan create un model con relativa migration e un resource controller.
 
-Per il backend:
+## Milestone 2
 
-```
-composer install
-php artisan serve
-```
+Iniziate a definire le prime operazioni CRUD con le relative view:<br>
+<b>index()</b><br>
+<b>show()</b><br>
+<b>create()</b><br>
+<b>store()</b>
 
-Poi copia il file `.env.example` in `.env` e configura la connessione al DB
+## Bonus:
 
-## Create a controller
-
-...
-
-## Create a model
+Creare il seeder per la tabella comics utilizzando il file in allegato.
