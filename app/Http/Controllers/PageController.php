@@ -25,4 +25,5 @@ class PageController extends Controller
 	{
 		dd($request->all());
 	}
+
 }
