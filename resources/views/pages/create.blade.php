@@ -7,7 +7,11 @@
         <div class="container py-4">
             <h1>FORM</h1>
 
+            <form action="{{ route('pages.store') }}" method="POST">
+                @csrf
 
+
+            </form>
         </div>
     </section>
 @endsection

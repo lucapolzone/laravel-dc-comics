@@ -18,3 +18,4 @@ use App\Http\Controllers\PageController;
 
 Route::get('/', [PageController::class, 'index'])->name('home');
 Route::get('/create', [PageController::class, 'create'])->name('pages.create');
+Route::post('/', [PageController::class, 'store'])->name('pages.store');
