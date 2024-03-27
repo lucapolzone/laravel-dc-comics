@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comic;
+
+use CompileError;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -23,7 +26,19 @@ class PageController extends Controller
 	//Questa classe contiene le informazioni sulla richiesta HTTP in arrivo, come i dati del modulo inviati dal client
 	public function store(Request $request)
 	{
-		dd($request->all());
+		// dd($request->all());
+
+		$data = $request->all();
+
+		$comic = new Comic;
+
+		$comic->title = $data['title'];
+		$comic->description = $data['description'];
+		$comic->thumb = $data['thumb'];
+		$comic->price = $data['price'];
+		$comic->sale_date = $data['sale_date'];
+
+		$comic->save();
 	}
 
 }
