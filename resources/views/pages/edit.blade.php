@@ -1,19 +1,17 @@
 @extends('layouts.app')
 
-@section('title', 'Inserisci un fumetto')
+@section('title', 'Modifica le info di un fumetto')
 
 @section('main-content')
     <section>
         <div class="container py-4">
-            <h1>FORM</h1>
-            {{-- action deve puntare allo store --}}
+            <h1>Modifica le info di un fumetto</h1>
             <form action="{{ route('pages.store') }}" class="row g-3" method="POST">
-                {{-- genera un token nascosto validato da laravel   --}}
                 @csrf
 
                 <div class="col-12">
                     <label class="form-label" for="title">Title</label>
-                    <input class="form-control" id="title" name="title" type="text" />
+                    <input class="form-control" id="title" name="title" type="text" value="pippo"/>
                 </div>
 
                 <div class="col-12">
@@ -37,16 +35,9 @@
                 </div>
 
                 <div class="col">
-                    <button class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i> Salva</button>
+                    <button class="btn btn-warning">Modifica</button>
                 </div>
             </form>
         </div>
     </section>
-@endsection
-
-{{-- Link cdn font awesome --}}
-@section('css')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
 @endsection

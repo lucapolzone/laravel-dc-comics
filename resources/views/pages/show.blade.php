@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
-@section('title', 'Pagina iniziale')
+@section('title', 'Pagina fumetto')
 
 @section('main-content')
     <section>
         <div class="container">
+            <a href="{{ route('pages.edit', $comic) }}" class="btn btn-warning my-3">Modifica</a>
             <p><strong>Titolo fumetto: </strong> {{ $comic->title }}</p>
             <p><strong>Descrizione fumetto: </strong> {{ $comic->description }}</p>
             <p><strong>Copertina:</strong></p>

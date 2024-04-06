@@ -16,7 +16,7 @@ use App\Http\Controllers\ComicController;
 
 
 
-Route::get('/', [ComicController::class, 'index'])->name('home');
+Route::get('/', [ComicController::class, 'index'])->name('pages.home');
 
 //rotta con metodo create per il form
 Route::get('/create', [ComicController::class, 'create'])->name('pages.create');
@@ -25,3 +25,8 @@ Route::get('/create', [ComicController::class, 'create'])->name('pages.create');
 Route::post('/', [ComicController::class, 'store'])->name('pages.store');
 
 Route::get('/{comic}', [ComicController::class, 'show'])->name('pages.show');
+
+
+//MODIFICA
+Route::get('/{comic}/edit', [ComicController::class, 'edit'])->name('pages.edit');
+// Route::get('/{comic}', [ComicController::class, 'update'])->name('pages.update');
