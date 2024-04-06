@@ -7,7 +7,7 @@ use App\Models\Comic;
 use CompileError;
 use Illuminate\Http\Request;
 
-class PageController extends Controller
+class ComicController extends Controller
 {
 	//
 	public function index()
@@ -22,10 +22,6 @@ class PageController extends Controller
 		return view('pages.create');
 	}
 
-
-	public function show(Comic $comic) {
-  return view('pages.show', compact('comic'));
-}
 
 
 	//Salva una risorsa appena creata
@@ -49,5 +45,9 @@ class PageController extends Controller
 
 		return redirect()->route('pages.show', $comic);
 	}
+
+	public function show(Comic $comic) {
+		return view('pages.show', compact('comic'));
+		}
 
 }

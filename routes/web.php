@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PageController;
+use App\Http\Controllers\ComicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,12 +16,12 @@ use App\Http\Controllers\PageController;
 
 
 
-Route::get('/', [PageController::class, 'index'])->name('home');
+Route::get('/', [ComicController::class, 'index'])->name('home');
 
 //rotta con metodo create per il form
-Route::get('/create', [PageController::class, 'create'])->name('pages.create');
+Route::get('/create', [ComicController::class, 'create'])->name('pages.create');
 
-Route::get('/{comic}', [PageController::class, 'show'])->name('pages.show');
+Route::get('/{comic}', [ComicController::class, 'show'])->name('pages.show');
 
 //rotta con metodo store per il form
-Route::post('/', [PageController::class, 'store'])->name('pages.store');
+Route::post('/', [ComicController::class, 'store'])->name('pages.store');
