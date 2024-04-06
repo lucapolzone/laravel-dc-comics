@@ -15,6 +15,7 @@
                         <th scope="col">Data pubblicazione</th>
                         <th scope="col">Categoria</th>
                         <th scope="col">Show</th>
+                        <th scope="col">Modifica</th>
                     </tr>
                 </thead>
                 @foreach ($comics as $comic)
@@ -27,6 +28,11 @@
                     <td>
                         <a href="{{ route('pages.show', $comic->id) }}">
                             <i class="fa-solid fa-eye" style="color: Dodgerblue;"></i>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{{ route('pages.edit', $comic) }}">
+                            <i class="fa-solid fa-pen" style="color: orange;"></i>
                         </a>
                     </td>
                 </tr>

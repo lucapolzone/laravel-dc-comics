@@ -53,14 +53,14 @@ class ComicController extends Controller
 		return view('pages.show', compact('comic'));
 	}
 
+	
+	public function edit(Comic $comic) {
+		return view('pages.edit', compact('comic'));
+	}
+	
 	public function update(Request $request, Comic $comic) {
 		$data = $request->all();
 		$comic->update($data);
 		return redirect()->route('pages.show', $comic);
 	}
-
-	public function edit(Comic $comic) {
-		return view('pages.edit', compact('comic'));
-	}
-
 }
