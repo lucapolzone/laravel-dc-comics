@@ -12,8 +12,8 @@ class ComicController extends Controller
 	//
 	public function index()
 	{
-		// $comics = Comic::all(); //passo a compact $comics come Collection
-		$comics = Comic::paginate(5);
+		// $comics = Comic::all();    //passo a compact $comics come Collection
+		$comics = Comic::paginate(5); //passo a compact $comics come Collection
 		return view('pages.home', compact('comics'));
 	}
 
@@ -36,11 +36,13 @@ class ComicController extends Controller
 
 		$comic = new Comic;
 
-		$comic->title = $data['title'];
-		$comic->description = $data['description'];
-		$comic->thumb = $data['thumb'];
-		$comic->price = $data['price'];
-		$comic->sale_date = $data['sale_date'];
+		// $comic->title = $data['title'];
+		// $comic->description = $data['description'];
+		// $comic->thumb = $data['thumb'];
+		// $comic->price = $data['price'];
+		// $comic->sale_date = $data['sale_date'];
+
+		$comic->fill($data);
 
 		$comic->save();
 
