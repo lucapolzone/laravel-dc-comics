@@ -28,6 +28,7 @@
                 </tr>
                 @endforeach
             </table>
+            {{ $comics->links('pagination::bootstrap-5') }}
         </div>
     </section>
 @endsection
