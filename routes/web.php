@@ -30,3 +30,6 @@ Route::get('/{comic}', [ComicController::class, 'show'])->name('pages.show');
 //MODIFICA
 Route::get('/{comic}/edit', [ComicController::class, 'edit'])->name('pages.edit');
 Route::patch('/{comic}', [ComicController::class, 'update'])->name('pages.update');
+
+//ELIMINA
+Route::delete('/{comic}', [ComicController::class, 'destroy'])->name('pages.destroy');

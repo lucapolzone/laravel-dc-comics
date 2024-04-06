@@ -14,8 +14,9 @@
                         <th scope="col">Collana</th>
                         <th scope="col">Data pubblicazione</th>
                         <th scope="col">Categoria</th>
-                        <th scope="col">Show</th>
-                        <th scope="col">Modifica</th>
+                        <th scope="col" class="text-center">Show</th>
+                        <th scope="col" class="text-center">Modifica</th>
+                        <th scope="col" class="text-center">Elimina</th>
                     </tr>
                 </thead>
                 @foreach ($comics as $comic)
@@ -25,15 +26,24 @@
                     <td>{{ $comic->series }}</td>
                     <td>{{ $comic->sale_date }}</td>
                     <td>{{ $comic->type }}</td>
-                    <td>
-                        <a href="{{ route('pages.show', $comic->id) }}">
+                    <td class="text-center">
+                        <a href="{{ route('pages.show', $comic) }}">
                             <i class="fa-solid fa-eye" style="color: Dodgerblue;"></i>
                         </a>
                     </td>
-                    <td>
+                    <td class="text-center">
                         <a href="{{ route('pages.edit', $comic) }}">
                             <i class="fa-solid fa-pen" style="color: orange;"></i>
                         </a>
+                    </td>
+                    <td class="text-center">
+                        <form action="{{ route('pages.destroy', $comic) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button class="bin-button">
+                                <i class="fa-solid fa-trash text-danger"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
