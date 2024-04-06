@@ -16,9 +16,11 @@ return new class extends Migration {
             $table->id();
             $table->string('title');
             $table->text('description');
-            $table->string('thumb');
-            $table->float('price');
-            $table->string('sale_date');
+            $table->text('thumb');
+            $table->tinyText('price');
+            $table->tinyText('series');
+            $table->date('sale_date');
+            $table->tinyText('type');
             $table->timestamps();
         });
     }

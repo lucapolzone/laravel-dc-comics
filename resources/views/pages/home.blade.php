@@ -10,18 +10,20 @@
                 <thead>
                     <tr>
                         <th scope="col">Titolo</th>
-                        <th scope="col">Descrizione</th>
                         <th scope="col">Prezzo</th>
+                        <th scope="col">Collana</th>
                         <th scope="col">Data pubblicazione</th>
+                        <th scope="col">Categoria</th>
                         <th scope="col">Link</th>
                     </tr>
                 </thead>
                 @foreach ($comics as $comic)
                 <tr>
                     <td>{{ $comic->title }}</td>
-                    <td>{{ $comic->description }}</td>
-                    <td>${{ $comic->price }}</td>
+                    <td>{{ $comic->price }}</td>
+                    <td>{{ $comic->series }}</td>
                     <td>{{ $comic->sale_date }}</td>
+                    <td>{{ $comic->type }}</td>
                     <td>
                         <a href="{{ route('pages.show', $comic->id) }}">Dettaglio</a>
                     </td>

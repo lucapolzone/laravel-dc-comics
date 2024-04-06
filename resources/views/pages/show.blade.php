@@ -10,7 +10,9 @@
             <p><strong>Copertina:</strong></p>
             <img src="{{ url($comic['thumb']) }}" alt="">
             <p><strong>Prezzo: </strong> {{ $comic->price }}</p>
+            <p><strong>Collana: </strong> {{ $comic->series }}</p>
             <p><strong>Data pubblicazione: </strong> {{ $comic->sale_date }}</p>
+            <p><strong>Categoria: </strong> {{ $comic->type }}</p>
         </div>
     </section>
 @endsection
