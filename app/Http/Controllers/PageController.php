@@ -12,7 +12,8 @@ class PageController extends Controller
 	//
 	public function index()
 	{
-		return view('pages.home');
+		$comics = Comic::all(); //passo a compact $comics come Collection
+		return view('pages.home', compact('comics'));
 	}
 
 	//form per creare una nuova risorsa
@@ -20,6 +21,12 @@ class PageController extends Controller
 	{
 		return view('pages.create');
 	}
+
+
+	public function show(Comic $comic) {
+  return view('pages.show', compact('comic'));
+}
+
 
 	//Salva una risorsa appena creata
 	//Parametro Request $request che rappresenta l'istanza della classe Illuminate\Http\Request
@@ -39,6 +46,8 @@ class PageController extends Controller
 		$comic->sale_date = $data['sale_date'];
 
 		$comic->save();
+
+		return redirect()->route('pages.show', $comic);
 	}
 
 }

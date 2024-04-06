@@ -21,5 +21,7 @@ Route::get('/', [PageController::class, 'index'])->name('home');
 //rotta con metodo create per il form
 Route::get('/create', [PageController::class, 'create'])->name('pages.create');
 
+Route::get('/{comic}', [PageController::class, 'show'])->name('pages.show');
+
 //rotta con metodo store per il form
 Route::post('/', [PageController::class, 'store'])->name('pages.store');

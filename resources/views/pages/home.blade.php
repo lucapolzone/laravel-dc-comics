@@ -5,7 +5,29 @@
 @section('main-content')
     <section>
         <div class="container py-4">
-            <h1>Laravel with Bootstrap + Vite</h1>
+            <h1>I miei fumetti</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Titolo</th>
+                        <th scope="col">Descrizione</th>
+                        <th scope="col">Prezzo</th>
+                        <th scope="col">Data pubblicazione</th>
+                        <th scope="col">Link</th>
+                    </tr>
+                </thead>
+                @foreach ($comics as $comic)
+                <tr>
+                    <td>{{ $comic->title }}</td>
+                    <td>{{ $comic->description }}</td>
+                    <td>${{ $comic->price }}</td>
+                    <td>{{ $comic->sale_date }}</td>
+                    <td>
+                        <a href="{{ route('pages.show', $comic->id) }}">Dettaglio</a>
+                    </td>
+                </tr>
+                @endforeach
+            </table>
         </div>
     </section>
 @endsection
